@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="formstyle.css">
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center vertically */
+            height: 100vh; /* Make the body fill the viewport height */
+            margin: 0; /* Remove default margin */
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Add some top margin */
+        }
+    </style>
+</head>
+<body>
+
+<header class="text-black body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+            <span class="ml-3 text-xl"> <p style="color: rgb(0, 0, 0);">Internship Application Portal</p></span>
+        </a>
+    </div>
+</header>
+
+<hr>
+<br>
+<br>
+<hr>
+
+<br>
+
+
+
+<br>
+<br>
+
+<div class="button-container">
+    <a href="adminlogin.html" style="margin: 10px;">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Admin</button>
+    </a>
+    <a href="registration.html" style="margin: 10px;">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Student</button>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="text-gray-600 body-font">
+    <div class="bg-gray-100">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">Mini Project
+            </p>
+        </div>
+    </div>
+</footer>
+<div th:if="${successMessage}" class="alert alert-success">
+    <p th:text="${successMessage}"></p>
+</div>
+</body>
+</html>

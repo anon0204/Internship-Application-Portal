@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="formstyle.css">
+</head>
+<body style="background-color: aliceblue;">
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex order-first lg:order-none lg:w-1/9 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+                <span class="ml-3 text-xl">
+                    <p style="color: rgb(0, 0, 0);">Internship Application Portal</p>
+                </span>
+            </a>
+        </div>
+    </header>
+
+    <br>
+
+    <form th:action="@{/student.html}" th:object="${student}" method="post">
+        <label for="studentId">Roll Number:</label>
+        <input type="number" th:field="*{studentId}" required><br/><br>
+
+        <label for="firstname">First Name:</label>
+        <input type="text" th:field="*{firstname}" required><br/><br>
+
+        <label for="middlename">Middle Name:</label>
+        <input type="text" th:field="*{middlename}" required><br/><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" th:field="*{lastname}" required><br/><br>
+
+        <label for="branch">Branch:</label>
+        <select th:field="*{branch}" required>
+            <option value="MECH">MECH</option>
+            <option value="COMP">COMP</option>
+            <option value="EXTC">EXTC</option>
+            <option value="ELEC">ELEC</option>
+            <option value="IT">IT</option>
+        </select><br/><br>
+
+        <label for="semester">Semester:</label>
+        <select th:field="*{semester}" required>
+            <option th:value="3">3</option>
+            <option th:value="4">4</option>
+            <option th:value="5">5</option>
+            <option th:value="6">6</option>
+            <option th:value="7">7</option>
+            <option th:value="8">8</option>
+        </select><br/><br>
+        
+        <label for="address">Address:</label>
+        <input type="text" th:field="*{address}" required><br/><br>
+
+        <label for="mobileno">Mobile Number:</label>
+        <input type="number" th:field="*{mobileno}" required><br/><br>
+
+        <label for="email">College Email:</label>
+        <input type="email" th:field="*{email}" required><br/><br>
+
+        <label for="personalmail">Personal Email:</label>
+        <input type="email" th:field="*{personalmail}" required><br/><br>
+
+        <label for="password">Password:</label>
+        <input type="password" th:field="*{password}" placeholder="Enter password" required><br/><br>
+
+        <label for="passwordCheck">Confirm Password:</label>
+        <input type="password" th:field="*{passwordCheck}" placeholder="Confirm password" required><br/><br>
+        <p th:if="${#fields.hasErrors('passwordCheck')}" th:errors="*{passwordCheck}">Passwords do not match</p>
+        <button type="submit">Submit</button>  
+    </form>
+    <div th:if="${detailStoredSuccessfully}">
+        <a href="home.html">Go to the link</a>
+    </div>
+    <div th:unless="${detailStoredSuccessfully}">
+        <p></p>
+    </div>
+</body>
+</html>

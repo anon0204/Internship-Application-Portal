@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Display Details</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="formstyle.css">
+</head>
+<body background-color="white" >
+
+
+  <header class="text-black body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center" >
+      <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+        <a class="mr-5 hover:text-gray-900"><a href ="home.html"> Home </a></a>
+        <a class="mr-5 hover:text-gray-900"><a href ="profile.html"> Profile </a></a>
+        <a class="mr-5 hover:text-gray-900"><a href ="application.html"> Applications </a></a>
+
+      </nav>
+      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+        <span class="ml-3 text-xl"> <p style="color: rgb(0, 0, 0);">Internship Application Portal</p></span>
+      </a>
+      <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+        <button class="inline-flex items-center bg-gray border-0 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base mt-4 md:mt-0"()> <a href ="login1.html">Logout </a>
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        
+      </div>
+    </div>
+  </header>
+  <h1>Student Details</h1>
+    <p>Roll Number: <span th:text="${student.studentId}"></span></p>
+    <p>First Name: <span th:text="${student.firstname}"></span></p>
+    <p>Middle Name: <span th:text="${student.middlename}"></span></p>
+    <p>Last Name: <span th:text="${student.lastname}"></span></p>
+    <p>Branch: <span th:text="${student.branch}"></span></p>
+    <p>Semester: <span th:text="${student.semester}"></span></p>
+    <p>Address: <span th:text="${student.address}"></span></p>
+    <p>Mobile No. : <span th:text="${student.mobileno}"></span></p>
+    <p>College Email: <span th:text="${student.email}"></span></p>
+    <p>Personal Email: <span th:text="${student.personalmail}"></span></p>
+</body>
+</html>
+

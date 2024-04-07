@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>    
+    <link rel="stylesheet" type="text/css" href="formstyle.css">
+    <style>
+        body {
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            max-width: 400px; /* Adjust the maximum width as needed */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    >
+
+    <div class="form-container">
+        <p><b> Create New Form </b></p>
+        <br>
+        <br>
+
+        <form th:action="@{/internship.html}" th:object="${internship}" method="post">
+            <label for="studentId">Roll Number:</label>
+        <input type="number" th:field="*{studentId}" required><br/><br>
+
+        <label for="internshipId">Internship Id (RollNo. + ApplicationNumber):</label>
+        <input type="text" th:field="*{internshipId}" required><br/><br>
+
+        <label for="companyname">Name of Company/Organization:</label>
+        <input type="text" th:field="*{companyname}" required><br/><br>
+
+        <label for="companyoffice">Office Address:</label>
+        <input type="text" th:field="*{companyoffice}" required><br/><br>
+
+        <label for="startdate">Start Date (YYYY-MM-DD):</label>
+        <input type="text" th:field="*{startdate}"  required><br/><br>
+
+        <label for="enddate">End Date (YYYY-MM-DD):</label>
+        <input type="text" th:field="*{enddate}"  required><br/><br>
+
+        <label for="starttime">Start Time (HH:MM AM/PM):</label>
+        <input type="text"  name="starttime" required="required" th:field="*{starttime}" ><br/><br>
+
+        <label for="endtime">End Time (HH:MM AM/PM):</label>
+        <input type="text" name="endtime" required="required" th:field="*{endtime}" ><br/><br>
+
+        <label for="position">Position/Role:</label>
+        <input type="text" th:field="*{position}" required><br/><br>
+
+        <label for="mode">Mode:</label>
+        <select th:field="*{mode}" required>
+            <option value="offline">offline</option>
+            <option value="online">online</option>
+        </select><br/><br>
+
+        <label for="stipend">Stipend:</label>
+        <input type="text" th:field="*{stipend}" required><br/><br>
+
+        <label for="workaddress">Work Address:</label>
+        <input type="text" th:field="*{workaddress}" required><br/><br>
+
+        <label for="status">Status:</label>
+        <select th:field="*{status}" required>
+            <option value="Applied">Applied</option>
+        </select><br/><br>
+
+        <label for="password">Confirm Password:</label>
+        <input type="text" th:field="*{password}" required><br/><br>
+
+        <button type="submit">Submit</button> 
+        </form>
+    </div>
+
+    <div th:if="${detailStoredSuccessfully}">
+        <a href="home.html"><b></b></a>
+    </div>
+    <div th:unless="${detailStoredSuccessfully}">
+        <p></p>
+    </div>
+</body>
+</html>
